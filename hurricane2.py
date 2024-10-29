@@ -13,11 +13,17 @@ def filter_and_save_hurricane_data(input_directory, output_file, columns_to_save
         if filename.endswith('.csv'):
             file_path = os.path.join(input_directory, filename)
             
-            df = pd.read_csv(file_path)
+            df = pd.read_csv(file_path, dtype=str)
+            df['USA_LAT'] = pd.to_numeric(df['USA_LAT'], errors='coerce')
+            df['USA_LON'] = pd.to_numeric(df['USA_LON'], errors='coerce')
 
             #Stipulate pertinent columns to parse
-            filtered_rows = df[(df['USA_STATUS'].str.contains('HU', case=False, na=False))]
+            #filtered_rows = df[(df['USA_LAT'].between(24.396308, 31.000968)) &
+            #                   (df['USA_LON'].between(-80.031362, -87.634938)) &
+            #                   (df['USA_STATUS'].str.contains('HU', case=False, na=False))]
             
+            filtered_rows = df[(df['USA_STATUS'].str.contains('HU', case=False, na=False))]
+
             # Keep only the specified columns
             filtered_rows = filtered_rows[columns_to_save]
             
