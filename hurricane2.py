@@ -1,5 +1,7 @@
 import os
 import pandas as pd
+import matplotlib.pyplot as plt
+
 from datetime import datetime
 
 # Function to read all CSV files in a directory and filter rows based on pertinent data
@@ -34,7 +36,7 @@ def filter_and_save_hurricane_data(input_directory, output_file, columns_to_save
 
             #Stipulate pertinent columns to parse
             #filtered_rows = df[(df['USA_LAT'].between(24.396308, 31.000968, inclusive=True)) &
-            #                   (df['USA_LON'].between(-80.031362, -87.634938, inclusive=True)) &
+            #                   (df['USA_LON'].between(-080.31362, -87.634938, inclusive=True)) &
             #                   (df['USA_STATUS'].str.contains('HU', case=False, na=False))]
 
             #filtered_rows = df[(df['USA_LAT'] >= 24.396308) & (df['USA_LAT' <= 31.000968]) &
