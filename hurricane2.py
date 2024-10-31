@@ -19,18 +19,18 @@ def filter_and_save_hurricane_data(input_directory, output_file, columns_to_save
 
             # Convert the USA_TIME column to a datetime object
             df['ISO_TIME'] = pd.to_datetime(df['ISO_TIME'], format='%m/%d/%y %H:%M')
-            #df['ISO_TIME'] = pd.to_datetime(df['ISO_TIME'], format='%m/%d/%Y %H:%M')
-            #df['ISO_TIME'] = pd.to_datetime(df['ISO_TIME'], format='ISO8601')
-            #df['ISO_TIME'] = pd.to_datetime(df['ISO_TIME'], format='mixed')
 
             # Create new columns for YEAR, MONTH, and DAY
-            df['YEAR'] = df['ISO_TIME'].dt.strftime('%Y')  # Extract the year
+            df['YEAR'] = df['ISO_TIME'].dt.strftime('%y')  # Extract the year
             df['MONTH'] = df['ISO_TIME'].dt.strftime('%m')  # Extract the month
             df['DAY'] = df['ISO_TIME'].dt.strftime('%d')    # Extract the day
 
             # Convert the USA_LAT and USA_LON to numeric object
-            df['USA_LAT'] = pd.to_numeric(df['USA_LAT'], errors='coerce')
-            df['USA_LON'] = pd.to_numeric(df['USA_LON'], errors='coerce')
+            #df['USA_LAT'] = pd.to_numeric(df['USA_LAT'], errors='coerce')
+            #df['USA_LON'] = pd.to_numeric(df['USA_LON'], errors='coerce')
+
+            df['USA_LAT'] = pd.to_numeric(df['USA_LAT'],   downcast='float', errors='coerce')
+            df['USA_LON'] = pd.to_numeric(df['USA_LON'],   downcast='float', errors='coerce')
 
             #Stipulate pertinent columns to parse
             #filtered_rows = df[(df['USA_LAT'].between(24.396308, 31.000968, inclusive=True)) &
@@ -41,6 +41,10 @@ def filter_and_save_hurricane_data(input_directory, output_file, columns_to_save
             #                   (df['USA_LON'] >= -87.634938) & (df['USA_LAT' <= -80.031362])]
             
             filtered_rows = df[(df['USA_STATUS'].str.contains('HU', case=False, na=False))]
+
+            #filtered_rows = df[(df['USA_LAT'].between(24.396308, 31.000968)) &
+            #                   (df['USA_LON'].between(-80.031362, -87.634938)) &
+            #                   (df['USA_STATUS'].str.contains('HU', case=False, na=False))]
 
             # Keep only the specified columns
             filtered_rows = filtered_rows[columns_to_save]
