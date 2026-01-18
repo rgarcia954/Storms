@@ -11,3 +11,4 @@ ibtracs/
 test/
 Storms.code-workspace
 .DS_Store
+*.csv
