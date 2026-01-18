@@ -22,42 +22,50 @@ def print_hurricane_years_in_fl(directory):
                         print(f"Year: {row['YEAR']}, Month: {row['MONTH_NAME']}, File: {filename}")
 
 # Main code
-directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/50s'
+# directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/50s'
+directory_path = '.\\50s'
 print_hurricane_years_in_fl(directory_path)
 
 print()
 
-directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/60s'
+# directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/60s'
+directory_path = '.\\60s'
 print_hurricane_years_in_fl(directory_path)
 
 print()
 
-directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/70s'
+# directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/70s'
+directory_path = '.\\70s'
 print_hurricane_years_in_fl(directory_path)
 
 print()
 
-directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/80s'
+# directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/80s'
+directory_path = '.\\80s'
 print_hurricane_years_in_fl(directory_path)
 
 print()
 
-directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/90s'
+# directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/90s'
+directory_path = '.\\90s'
 print_hurricane_years_in_fl(directory_path)
 
 print()
 
-directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/00s'
+# directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/00s'
+directory_path = '.\\00s'
 print_hurricane_years_in_fl(directory_path)
 
 print()
 
-directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/10s'
+# directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/10s'
+directory_path = '.\\10s'
 print_hurricane_years_in_fl(directory_path)
 
 print()
 
-directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/20s'
+# directory_path = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/20s'
+directory_path = '.\\20s'
 print_hurricane_years_in_fl(directory_path)
 
 print()
