@@ -1,8 +1,11 @@
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
-
+from pathlib import Path
 from datetime import datetime
+
+# Project root (directory where this script lives)
+BASE_DIR = Path(__file__).resolve().parent
 
 # Function to read all CSV files in a directory and filter rows based on pertinent data
 # Save only the specified columns to a new CSV
@@ -71,11 +74,8 @@ def convert_to_date(date_string, format_string="%Y-%m-%d"):
 
 
 # Main
-# input_directory = '/Users/rudygarcia/Library/CloudStorage/OneDrive-Personal/Documents/Family/Rudy/Storms/ibtracs'
-#input_directory = '\Users\rugar\OneDrive\Documents\Family\Rudy\Python\Storms\ibtracs'
-input_directory = '.\ibtracs'
 
-#input_directory = '.\ibtracs'
+input_directory = BASE_DIR / "ibtracs"
 output_file = 'filtered_hurricane_data.csv'
 columns_to_save = ['USA_LAT_DEC', 'USA_LON_DEC', 'NAME', 'YEAR_DEC', 'MONTH', 'DAY', 'USA_STATUS', 'USA_WIND']
 
